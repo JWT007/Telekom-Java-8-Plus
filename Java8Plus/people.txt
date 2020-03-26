@@ -1,0 +1,6 @@
+1,Sawitzki,Rainer,Marienplatz,München
+2,Sawitzki,Klaus,Hauptstraße,Nöhag
+3,Mustermann,Hans,Alexanderplatz,Berlin
+4,Schneider,Hanna,Glockenbach,München
+5,Zettach,Ring,Königsplatz,Stuttgart
+2,Sawitzki,Zvonimir,Bahnhofstraße,Hamburg

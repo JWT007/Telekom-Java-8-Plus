@@ -11,7 +11,7 @@ public class Person implements Addressable {
 	private String firstname;
 	private Long id;
 	private Address address;
-	public Person(String lastname, String fristname, Long id, Address address) {
+	public Person(Long id, String lastname, String fristname, Address address) {
 		super();
 		this.lastname = lastname;
 		this.firstname = fristname;
