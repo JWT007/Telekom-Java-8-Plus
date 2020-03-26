@@ -15,8 +15,16 @@ public interface Addressable {
     return getAddress().getCity();
   }
 
-  default String getNormalizedAddress() {
-    return getStreet() + ", " + getCity();
+  default String getNormalizedCity() {
+    return getCity().toUpperCase();
+  }
+
+  default String getNormalizedStreet() {
+    return getStreet().toUpperCase();
+  }
+
+  default Address getNormalizedAddress() {
+    return new Address(getNormalizedStreet(), getNormalizedCity());
   }
 
 }
