@@ -4,7 +4,7 @@
 
 ## Ablauf
 
-* 3" Tage
+* 2 Tage
 * Jeweils 4 Sessions je 90 Minuten
 * Session-Typen: 
  * Vortrag 45 Minuten Vortrag/Präsentation, 10 Minuten Fragen/Diskussion, 25 Minuten eigenständige Übungen, 10 Minuten Besprechung der Musterlösung und weitere Fragen
