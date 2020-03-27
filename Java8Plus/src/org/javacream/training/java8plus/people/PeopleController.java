@@ -1,11 +1,13 @@
 package org.javacream.training.java8plus.people;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public interface PeopleController {
 
+	Person create(String lastname, String firstname, Map<String, Object> options);
 	default Person findById(Long id) {
 		return findAllAsStream().filter(p -> p.getId() == id).collect(Collectors.toList()).get(0);
 	}

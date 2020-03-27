@@ -8,7 +8,7 @@ public class PersonTest {
 
 	@Test
 	public void testPerson() {
-		Person person = new Person("Sawitzki", "Rainer");
+		Person person = new Person(1l, "Sawitzki", "Rainer");
 		person.setAddress(new Address("München", "Marienplatz"));
 		Assert.assertEquals("city=München, street=Marienplatz", person.getShortAddress());
 		Address address = person.getNormalizedAddress();

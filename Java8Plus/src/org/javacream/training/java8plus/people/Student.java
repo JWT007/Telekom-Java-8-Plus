@@ -4,8 +4,8 @@ public class Student extends Person {
 
 	private University university;
 
-	public Student(String lastname, String firstname, University university) {
-		super(lastname, firstname);
+	public Student(Long id, String lastname, String firstname, University university) {
+		super(id, lastname, firstname);
 		this.university = university;
 	}
 

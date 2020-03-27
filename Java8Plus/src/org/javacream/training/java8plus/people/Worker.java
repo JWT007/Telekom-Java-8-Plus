@@ -6,8 +6,8 @@ public class Worker extends Person {
 
 	private Company company;
 
-	public Worker(String lastname, String firstname, Company company) {
-		super(lastname, firstname);
+	public Worker(Long id, String lastname, String firstname, Company company) {
+		super(id, lastname, firstname);
 		this.company = company;
 	}
 
