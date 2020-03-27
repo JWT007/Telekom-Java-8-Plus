@@ -37,4 +37,10 @@ public class PeopleControllerTest {
 		Assert.assertTrue(freelancer.getClass().equals(Freelancer.class));
 
 	}	
+
+	@Test(expected = NullPointerException.class) public void testUnknownOptions() {
+		Map<String, Object> unknownOptions = Map.of("unknwon", 9.99);
+		peopleController.create("Eg", "Al", unknownOptions);
+		
+	}
 }
