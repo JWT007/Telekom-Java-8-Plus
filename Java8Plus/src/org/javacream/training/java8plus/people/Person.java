@@ -2,15 +2,18 @@ package org.javacream.training.java8plus.people;
 
 public class Person implements Addressable {
 
-	public Person(String lastname, String fristname) {
-		super();
-		this.lastname = lastname;
-		this.firstname = fristname;
-	}
 	private String lastname;
 	private String firstname;
 	private Long id;
 	private Address address;
+	
+	public Person(Long id, String lastname, String fristname) {
+		super();
+		this.lastname = lastname;
+		this.firstname = fristname;
+		this.id= id;
+	}
+	
 	public Person(Long id, String lastname, String fristname, Address address) {
 		super();
 		this.lastname = lastname;

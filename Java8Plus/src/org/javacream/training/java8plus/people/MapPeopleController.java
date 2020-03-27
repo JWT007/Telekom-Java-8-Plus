@@ -4,10 +4,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.stream.Stream;
 
 public class MapPeopleController implements PeopleController {
+	
+	private PersonBuilder builder;
+	
+	
 	private HashMap<Long, Person> people;
 	{
 		people = new HashMap<>();
@@ -20,6 +26,17 @@ public class MapPeopleController implements PeopleController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		builder = new PersonBuilder();
+		Set<String> personSet = Set.of();
+		Set<String> workerSet = Set.of("company");
+		Set<String> studentSet = Set.of("university");
+		Set<String> freelancerSet = Set.of("salary");
+		builder.add(personSet, PersonCreateFunctions::person);
+		builder.add(workerSet, PersonCreateFunctions::worker);
+		builder.add(studentSet, PersonCreateFunctions::student);
+		builder.add(freelancerSet, PersonCreateFunctions::freelancer);
+
 	}
 	
 	public Person assemble(String s) {
@@ -36,6 +53,15 @@ public class MapPeopleController implements PeopleController {
 	@Override
 	public Stream<Person> findAllAsStream() {
 		return people.values().stream();
+	}
+
+
+	@Override
+	public Person create(String lastname, String firstname, Map<String, Object> options) {
+		Person person = builder.build(lastname, firstname, options);
+		Long id = person.getId();
+		people.put(id, person);
+		return person;
 	}
 
 }
