@@ -3,6 +3,7 @@ package org.javacream.training.java8plus.people;
 public interface Addressable {
 
 	Address getAddress();
+	
 	default String getShortAddress() {
 		return "city=" + getAddress().getCity() + ", street=" + getAddress().getStreet();
 	}
@@ -24,5 +25,8 @@ public interface Addressable {
 	default String getNormalizedStreet(String street) {
 		return street.toLowerCase();
 	}
-
+	
+	default String doSomething() {
+		return "OK";
+	}
 }
