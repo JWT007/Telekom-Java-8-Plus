@@ -1,22 +1,27 @@
 package org.javacream.training.java8plus.people;
 
-public class Person implements Addressable {
+import java.util.Optional;
 
-	public Person(String lastname, String fristname) {
-		super();
-		this.lastname = lastname;
-		this.firstname = fristname;
-	}
+public class Person implements Addressable {
+	public static final Address DEFAULT_ADDRESS = new Address("UNKNOWN CITY", "UNKNOWN STREET");
 	private String lastname;
 	private String firstname;
 	private Long id;
-	private Address address;
+	private Optional<Address> address = Optional.empty();
+	
+	public Person(Long id, String lastname, String fristname) {
+		super();
+		this.lastname = lastname;
+		this.firstname = fristname;
+		this.id= id;
+	}
+	
 	public Person(Long id, String lastname, String fristname, Address address) {
 		super();
 		this.lastname = lastname;
 		this.firstname = fristname;
 		this.id = id;
-		this.address = address;
+		this.address = Optional.of(address);
 	}
 	@Override
 	public String toString() {
@@ -30,10 +35,10 @@ public class Person implements Addressable {
 		this.lastname = lastname;
 	}
 	public Address getAddress() {
-		return address;
+		return address.orElse(DEFAULT_ADDRESS);
 	}
 	public void setAddress(Address address) {
-		this.address = address;
+		this.address = Optional.of(address);
 	}
 	public String getFirstname() {
 		return firstname;

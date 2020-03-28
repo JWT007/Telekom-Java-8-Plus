@@ -2,8 +2,8 @@ package org.javacream.training.java8plus.people;
 
 public class Freelancer extends Person {
 
-	public Freelancer(String lastname, String firstname) {
-		super(lastname, firstname);
+	public Freelancer(Long id, String lastname, String firstname) {
+		super(id, lastname, firstname);
 	}
 
 	private Double salary;
